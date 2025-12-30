@@ -96,42 +96,179 @@
             pointer-events: none;
         }
 
-        /* MOÑO */
+        /* MOÑO ELEGANTE VERDE CON BRILLO */
         .bow-tie {
             position: absolute;
-            top: 15px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
-            display: flex;
-            align-items: center;
+            width: 110px;
+            height: 55px;
+            filter: drop-shadow(0 0 10px rgba(152, 255, 152, 0.5));
         }
 
+        /* Alas del moño */
         .bow-tie-wing {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             width: 45px;
-            height: 28px;
-            background: #000;
-            border: 1px solid #333;
+            height: 35px;
+            background: linear-gradient(145deg, #98FF98 0%, #5cbf5c 40%, #7adf7a 70%, #98FF98 100%);
         }
 
         .bow-tie-wing.left {
-            border-radius: 50% 0 0 50%;
-            transform: skewY(-5deg);
+            left: 0;
+            border-radius: 8px 4px 4px 8px;
+            clip-path: polygon(0% 50%, 15% 5%, 100% 15%, 100% 85%, 15% 95%);
+            box-shadow: 
+                inset 3px 0 8px rgba(255,255,255,0.4),
+                inset -2px 0 6px rgba(0,100,0,0.4),
+                2px 2px 10px rgba(152, 255, 152, 0.4);
+            animation: shimmerLeft 2s ease-in-out infinite;
         }
 
         .bow-tie-wing.right {
-            border-radius: 0 50% 50% 0;
-            transform: skewY(5deg);
+            right: 0;
+            border-radius: 4px 8px 8px 4px;
+            clip-path: polygon(0% 15%, 85% 5%, 100% 50%, 85% 95%, 0% 85%);
+            box-shadow: 
+                inset -3px 0 8px rgba(255,255,255,0.4),
+                inset 2px 0 6px rgba(0,100,0,0.4),
+                -2px 2px 10px rgba(152, 255, 152, 0.4);
+            animation: shimmerRight 2s ease-in-out infinite;
         }
 
+        /* Animación de brillo */
+        @keyframes shimmerLeft {
+            0%, 100% { 
+                box-shadow: 
+                    inset 3px 0 8px rgba(255,255,255,0.4),
+                    inset -2px 0 6px rgba(0,100,0,0.4),
+                    2px 2px 10px rgba(152, 255, 152, 0.4);
+            }
+            50% { 
+                box-shadow: 
+                    inset 5px 0 12px rgba(255,255,255,0.6),
+                    inset -2px 0 6px rgba(0,100,0,0.3),
+                    2px 2px 15px rgba(152, 255, 152, 0.7);
+            }
+        }
+
+        @keyframes shimmerRight {
+            0%, 100% { 
+                box-shadow: 
+                    inset -3px 0 8px rgba(255,255,255,0.4),
+                    inset 2px 0 6px rgba(0,100,0,0.4),
+                    -2px 2px 10px rgba(152, 255, 152, 0.4);
+            }
+            50% { 
+                box-shadow: 
+                    inset -5px 0 12px rgba(255,255,255,0.6),
+                    inset 2px 0 6px rgba(0,100,0,0.3),
+                    -2px 2px 15px rgba(152, 255, 152, 0.7);
+            }
+        }
+
+        /* Pliegues internos del moño */
+        .bow-tie-wing::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            bottom: 15%;
+            width: 100%;
+            background: linear-gradient(180deg, 
+                transparent 0%,
+                rgba(255,255,255,0.3) 20%,
+                transparent 40%,
+                rgba(0,80,0,0.15) 60%,
+                transparent 80%,
+                rgba(255,255,255,0.2) 100%);
+        }
+
+        /* Sombra de profundidad */
+        .bow-tie-wing.left::after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 25%;
+            width: 6px;
+            height: 50%;
+            background: linear-gradient(90deg, rgba(0,80,0,0.4), transparent);
+            border-radius: 2px;
+        }
+
+        .bow-tie-wing.right::after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 25%;
+            width: 6px;
+            height: 50%;
+            background: linear-gradient(-90deg, rgba(0,80,0,0.4), transparent);
+            border-radius: 2px;
+        }
+
+        /* Nudo central elegante verde */
         .bow-tie-center {
-            width: 16px;
-            height: 20px;
-            background: #000;
-            border: 1px solid #333;
-            border-radius: 3px;
-            margin: 0 -2px;
-            z-index: 2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 28px;
+            background: linear-gradient(180deg, #b0ffb0 0%, #70cf70 30%, #50af50 70%, #98FF98 100%);
+            border-radius: 5px;
+            z-index: 5;
+            box-shadow: 
+                0 3px 8px rgba(0,100,0,0.5),
+                0 0 15px rgba(152, 255, 152, 0.5),
+                inset 0 2px 3px rgba(255,255,255,0.5),
+                inset 0 -2px 3px rgba(0,80,0,0.3);
+            animation: centerGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes centerGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 3px 8px rgba(0,100,0,0.5),
+                    0 0 15px rgba(152, 255, 152, 0.5),
+                    inset 0 2px 3px rgba(255,255,255,0.5),
+                    inset 0 -2px 3px rgba(0,80,0,0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 3px 10px rgba(0,100,0,0.6),
+                    0 0 25px rgba(152, 255, 152, 0.8),
+                    inset 0 2px 4px rgba(255,255,255,0.6),
+                    inset 0 -2px 3px rgba(0,80,0,0.3);
+            }
+        }
+
+        /* Brillo superior del nudo */
+        .bow-tie-center::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            height: 8px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%);
+            border-radius: 3px 3px 50% 50%;
+        }
+
+        /* Línea decorativa del nudo */
+        .bow-tie-center::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 1px;
         }
 
         /* CONTENIDO DE LA INVITACIÓN */
@@ -139,7 +276,7 @@
             position: relative;
             z-index: 10;
             text-align: center;
-            padding: 55px 20px 15px;
+            padding: 45px 15px 10px;
             width: 100%;
             opacity: 0;
             transform: scale(0.9);
@@ -153,104 +290,213 @@
 
         .invitacion-text {
             font-family: 'Pinyon Script', cursive;
-            font-size: 32px;
+            font-size: 28px;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .name {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             color: #98FF98;
             letter-spacing: 4px;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .fiesta-text {
-            font-size: 14px;
+            font-size: 12px;
             color: #ccc;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
         }
 
         .mis-anos {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 8px;
+            margin-bottom: 5px;
         }
 
         .mis-text, .anos-text {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: #fff;
         }
 
         .number-18 {
             font-family: 'Playfair Display', serif;
-            font-size: 72px;
+            font-size: 60px;
             font-weight: 700;
             color: #98FF98;
             line-height: 1;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
         }
 
-        /* Adorno decorativo */
+        /* Adorno decorativo con curvas elegantes */
         .ornament-divider {
-            width: 150px;
-            height: 25px;
-            margin: 10px auto;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 25'%3E%3Cpath d='M0,12 Q35,0 75,12 Q115,24 150,12' stroke='%23666' fill='none' stroke-width='1'/%3E%3Cpath d='M0,12 Q35,24 75,12 Q115,0 150,12' stroke='%23666' fill='none' stroke-width='1'/%3E%3Ccircle cx='75' cy='12' r='4' fill='%23fff'/%3E%3Cpath d='M65,12 L58,8 M65,12 L58,16' stroke='%23fff' fill='none' stroke-width='1'/%3E%3Cpath d='M85,12 L92,8 M85,12 L92,16' stroke='%23fff' fill='none' stroke-width='1'/%3E%3C/svg%3E") center/contain no-repeat;
+            width: 240px;
+            height: 35px;
+            margin: 8px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ornament-divider svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            filter: drop-shadow(0 0 3px rgba(152, 255, 152, 0.4));
         }
 
         .date-text {
-            font-size: 18px;
+            font-size: 16px;
             color: #98FF98;
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
-        /* Cinta/Ribbon */
+        /* Cinta/Ribbon Super Elegante */
         .ribbon-container {
             display: flex;
             justify-content: center;
-            margin: 15px 0;
+            margin: 12px 0;
+            position: relative;
+        }
+
+        .ribbon-wrapper {
+            position: relative;
+            display: inline-block;
         }
 
         .ribbon {
-            background: #fff;
-            color: #000;
-            padding: 10px 40px;
-            font-size: 16px;
-            font-weight: 600;
+            background: linear-gradient(180deg, 
+                #f8f8f8 0%, 
+                #ffffff 15%,
+                #f5f5f5 30%,
+                #e8e8e8 50%,
+                #f0f0f0 70%,
+                #ffffff 85%,
+                #e5e5e5 100%);
+            color: #1a1a1a;
+            padding: 12px 50px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
             position: relative;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            z-index: 2;
+            border: 1px solid rgba(152, 255, 152, 0.5);
+            box-shadow: 
+                0 6px 20px rgba(0,0,0,0.5),
+                0 0 15px rgba(152, 255, 152, 0.3),
+                inset 0 1px 0 rgba(255,255,255,1),
+                inset 0 -1px 0 rgba(0,0,0,0.1);
         }
 
+        /* Puntas de la cinta */
         .ribbon::before,
         .ribbon::after {
             content: '';
             position: absolute;
             top: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
+            height: 100%;
+            width: 25px;
+            background: linear-gradient(180deg, 
+                #f0f0f0 0%, 
+                #e8e8e8 50%,
+                #f0f0f0 100%);
         }
 
         .ribbon::before {
-            left: -18px;
-            border-width: 20px 18px 20px 0;
-            border-color: transparent #fff transparent transparent;
+            left: -25px;
+            clip-path: polygon(100% 0, 100% 100%, 0 50%);
+            border-top: 1px solid rgba(152, 255, 152, 0.5);
+            border-bottom: 1px solid rgba(152, 255, 152, 0.5);
         }
 
         .ribbon::after {
-            right: -18px;
-            border-width: 20px 0 20px 18px;
-            border-color: transparent transparent transparent #fff;
+            right: -25px;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            border-top: 1px solid rgba(152, 255, 152, 0.5);
+            border-bottom: 1px solid rgba(152, 255, 152, 0.5);
+        }
+
+        /* Colas de la cinta detrás */
+        .ribbon-tail-left,
+        .ribbon-tail-right {
+            position: absolute;
+            top: 8px;
+            width: 35px;
+            height: calc(100% - 16px);
+            background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 50%, #3a3a3a 100%);
+            z-index: 1;
+        }
+
+        .ribbon-tail-left {
+            left: -45px;
+            clip-path: polygon(100% 0, 100% 100%, 30% 100%, 0 50%, 30% 0);
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+        }
+
+        .ribbon-tail-right {
+            right: -45px;
+            clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+            box-shadow: -2px 3px 8px rgba(0,0,0,0.5);
+        }
+
+        /* Decoración de esquinas de la cinta */
+        .ribbon-corner {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #98FF98;
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(152, 255, 152, 0.8);
+        }
+
+        .ribbon-corner.top-left { top: -4px; left: -4px; }
+        .ribbon-corner.top-right { top: -4px; right: -4px; }
+        .ribbon-corner.bottom-left { bottom: -4px; left: -4px; }
+        .ribbon-corner.bottom-right { bottom: -4px; right: -4px; }
+
+        /* Línea decorativa superior e inferior */
+        .ribbon-line-top,
+        .ribbon-line-bottom {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(152, 255, 152, 0.6), transparent);
+        }
+
+        .ribbon-line-top { top: 4px; }
+        .ribbon-line-bottom { bottom: 4px; }
+
+        /* Brillo animado */
+        .ribbon-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.4), 
+                transparent);
+            animation: ribbonShine 3s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        @keyframes ribbonShine {
+            0% { left: -100%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
         }
 
         /* Iniciales con estrellas */
@@ -258,50 +504,50 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 12px;
+            margin: 8px 0;
         }
 
         .star {
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .initials {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 30px;
             font-weight: 700;
             color: #98FF98;
         }
 
         /* Detalles del evento */
         .event-details {
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .detail-row {
-            font-size: 14px;
+            font-size: 12px;
             color: #fff;
-            margin-bottom: 5px;
-            line-height: 1.5;
+            margin-bottom: 3px;
+            line-height: 1.4;
         }
 
         /* Countdown */
         .countdown-section {
-            margin-top: 15px;
-            padding: 10px;
+            margin-top: 8px;
+            padding: 8px;
         }
 
         .countdown-label {
-            font-size: 11px;
-            letter-spacing: 3px;
+            font-size: 10px;
+            letter-spacing: 2px;
             color: #666;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         #timeLeft {
             font-family: 'Playfair Display', serif;
-            font-size: 16px;
+            font-size: 14px;
             color: #98FF98;
         }
 
@@ -559,12 +805,66 @@
                     <span class="anos-text">AÑOS</span>
                 </div>
                 
-                <div class="ornament-divider"></div>
+                <div class="ornament-divider">
+                    <svg viewBox="0 0 280 50" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Curvas izquierdas -->
+                        <path d="M10,25 Q30,10 50,25 Q70,40 90,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
+                        <path d="M10,25 Q30,40 50,25 Q70,10 90,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
+                        
+                        <!-- Espirales izquierdas -->
+                        <path d="M5,25 Q0,15 10,10 Q20,5 25,15" stroke="#666" stroke-width="1" fill="none"/>
+                        <path d="M5,25 Q0,35 10,40 Q20,45 25,35" stroke="#666" stroke-width="1" fill="none"/>
+                        
+                        <!-- Curva conectora izquierda al centro -->
+                        <path d="M90,25 Q105,15 120,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
+                        <path d="M90,25 Q105,35 120,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
+                        
+                        <!-- Flor central -->
+                        <circle cx="140" cy="25" r="8" fill="#98FF98" opacity="0.9"/>
+                        <circle cx="140" cy="25" r="5" fill="#0d0d0d"/>
+                        <circle cx="140" cy="25" r="3" fill="#98FF98"/>
+                        
+                        <!-- Pétalos de la flor -->
+                        <ellipse cx="140" cy="14" rx="3" ry="5" fill="#98FF98" opacity="0.7"/>
+                        <ellipse cx="140" cy="36" rx="3" ry="5" fill="#98FF98" opacity="0.7"/>
+                        <ellipse cx="129" cy="25" rx="5" ry="3" fill="#98FF98" opacity="0.7"/>
+                        <ellipse cx="151" cy="25" rx="5" ry="3" fill="#98FF98" opacity="0.7"/>
+                        
+                        <!-- Curva conectora derecha del centro -->
+                        <path d="M160,25 Q175,15 190,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
+                        <path d="M160,25 Q175,35 190,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
+                        
+                        <!-- Curvas derechas -->
+                        <path d="M190,25 Q210,10 230,25 Q250,40 270,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
+                        <path d="M190,25 Q210,40 230,25 Q250,10 270,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
+                        
+                        <!-- Espirales derechas -->
+                        <path d="M275,25 Q280,15 270,10 Q260,5 255,15" stroke="#666" stroke-width="1" fill="none"/>
+                        <path d="M275,25 Q280,35 270,40 Q260,45 255,35" stroke="#666" stroke-width="1" fill="none"/>
+                        
+                        <!-- Puntos decorativos -->
+                        <circle cx="50" cy="25" r="2" fill="#98FF98"/>
+                        <circle cx="230" cy="25" r="2" fill="#98FF98"/>
+                    </svg>
+                </div>
                 
                 <div class="date-text">Sábado 03 de enero 2026</div>
                 
                 <div class="ribbon-container">
-                    <div class="ribbon">Hora: 6:00 PM</div>
+                    <div class="ribbon-wrapper">
+                        <span class="ribbon-tail-left"></span>
+                        <span class="ribbon-tail-right"></span>
+                        <div class="ribbon">
+                            <span class="ribbon-shine"></span>
+                            <span class="ribbon-line-top"></span>
+                            <span class="ribbon-line-bottom"></span>
+                            <span class="ribbon-corner top-left"></span>
+                            <span class="ribbon-corner top-right"></span>
+                            <span class="ribbon-corner bottom-left"></span>
+                            <span class="ribbon-corner bottom-right"></span>
+                            Hora: 6:00 PM
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="initials-row">
