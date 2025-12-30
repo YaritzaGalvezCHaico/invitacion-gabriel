@@ -25,7 +25,6 @@
             position: relative;
         }
 
-        /* Canvas para efectos */
         #bgCanvas {
             position: fixed;
             top: 0;
@@ -36,7 +35,6 @@
             z-index: 0;
         }
 
-        /* Instrucción de toque */
         .tap-instruction {
             position: fixed;
             bottom: 30px;
@@ -55,7 +53,6 @@
             50% { opacity: 1; }
         }
 
-        /* TARJETA PRINCIPAL */
         .tuxedo-card {
             position: relative;
             width: 380px;
@@ -66,7 +63,6 @@
             cursor: pointer;
         }
 
-        /* CAMISA INTERIOR - Diseño negro con la invitación */
         .shirt-inside {
             position: absolute;
             top: 0;
@@ -83,7 +79,6 @@
             overflow: hidden;
         }
 
-        /* Borde decorativo interior */
         .shirt-inside::before {
             content: '';
             position: absolute;
@@ -96,7 +91,6 @@
             pointer-events: none;
         }
 
-        /* MOÑO ELEGANTE VERDE CON BRILLO */
         .bow-tie {
             position: absolute;
             top: 10px;
@@ -108,7 +102,6 @@
             filter: drop-shadow(0 0 10px rgba(152, 255, 152, 0.5));
         }
 
-        /* Alas del moño */
         .bow-tie-wing {
             position: absolute;
             top: 50%;
@@ -122,10 +115,7 @@
             left: 0;
             border-radius: 8px 4px 4px 8px;
             clip-path: polygon(0% 50%, 15% 5%, 100% 15%, 100% 85%, 15% 95%);
-            box-shadow: 
-                inset 3px 0 8px rgba(255,255,255,0.4),
-                inset -2px 0 6px rgba(0,100,0,0.4),
-                2px 2px 10px rgba(152, 255, 152, 0.4);
+            box-shadow: inset 3px 0 8px rgba(255,255,255,0.4), inset -2px 0 6px rgba(0,100,0,0.4), 2px 2px 10px rgba(152, 255, 152, 0.4);
             animation: shimmerLeft 2s ease-in-out infinite;
         }
 
@@ -133,61 +123,29 @@
             right: 0;
             border-radius: 4px 8px 8px 4px;
             clip-path: polygon(0% 15%, 85% 5%, 100% 50%, 85% 95%, 0% 85%);
-            box-shadow: 
-                inset -3px 0 8px rgba(255,255,255,0.4),
-                inset 2px 0 6px rgba(0,100,0,0.4),
-                -2px 2px 10px rgba(152, 255, 152, 0.4);
+            box-shadow: inset -3px 0 8px rgba(255,255,255,0.4), inset 2px 0 6px rgba(0,100,0,0.4), -2px 2px 10px rgba(152, 255, 152, 0.4);
             animation: shimmerRight 2s ease-in-out infinite;
         }
 
-        /* Animación de brillo */
         @keyframes shimmerLeft {
-            0%, 100% { 
-                box-shadow: 
-                    inset 3px 0 8px rgba(255,255,255,0.4),
-                    inset -2px 0 6px rgba(0,100,0,0.4),
-                    2px 2px 10px rgba(152, 255, 152, 0.4);
-            }
-            50% { 
-                box-shadow: 
-                    inset 5px 0 12px rgba(255,255,255,0.6),
-                    inset -2px 0 6px rgba(0,100,0,0.3),
-                    2px 2px 15px rgba(152, 255, 152, 0.7);
-            }
+            0%, 100% { box-shadow: inset 3px 0 8px rgba(255,255,255,0.4), inset -2px 0 6px rgba(0,100,0,0.4), 2px 2px 10px rgba(152, 255, 152, 0.4); }
+            50% { box-shadow: inset 5px 0 12px rgba(255,255,255,0.6), inset -2px 0 6px rgba(0,100,0,0.3), 2px 2px 15px rgba(152, 255, 152, 0.7); }
         }
 
         @keyframes shimmerRight {
-            0%, 100% { 
-                box-shadow: 
-                    inset -3px 0 8px rgba(255,255,255,0.4),
-                    inset 2px 0 6px rgba(0,100,0,0.4),
-                    -2px 2px 10px rgba(152, 255, 152, 0.4);
-            }
-            50% { 
-                box-shadow: 
-                    inset -5px 0 12px rgba(255,255,255,0.6),
-                    inset 2px 0 6px rgba(0,100,0,0.3),
-                    -2px 2px 15px rgba(152, 255, 152, 0.7);
-            }
+            0%, 100% { box-shadow: inset -3px 0 8px rgba(255,255,255,0.4), inset 2px 0 6px rgba(0,100,0,0.4), -2px 2px 10px rgba(152, 255, 152, 0.4); }
+            50% { box-shadow: inset -5px 0 12px rgba(255,255,255,0.6), inset 2px 0 6px rgba(0,100,0,0.3), -2px 2px 15px rgba(152, 255, 152, 0.7); }
         }
 
-        /* Pliegues internos del moño */
         .bow-tie-wing::before {
             content: '';
             position: absolute;
             top: 15%;
             bottom: 15%;
             width: 100%;
-            background: linear-gradient(180deg, 
-                transparent 0%,
-                rgba(255,255,255,0.3) 20%,
-                transparent 40%,
-                rgba(0,80,0,0.15) 60%,
-                transparent 80%,
-                rgba(255,255,255,0.2) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.3) 20%, transparent 40%, rgba(0,80,0,0.15) 60%, transparent 80%, rgba(255,255,255,0.2) 100%);
         }
 
-        /* Sombra de profundidad */
         .bow-tie-wing.left::after {
             content: '';
             position: absolute;
@@ -210,7 +168,6 @@
             border-radius: 2px;
         }
 
-        /* Nudo central elegante verde */
         .bow-tie-center {
             position: absolute;
             left: 50%;
@@ -221,32 +178,15 @@
             background: linear-gradient(180deg, #b0ffb0 0%, #70cf70 30%, #50af50 70%, #98FF98 100%);
             border-radius: 5px;
             z-index: 5;
-            box-shadow: 
-                0 3px 8px rgba(0,100,0,0.5),
-                0 0 15px rgba(152, 255, 152, 0.5),
-                inset 0 2px 3px rgba(255,255,255,0.5),
-                inset 0 -2px 3px rgba(0,80,0,0.3);
+            box-shadow: 0 3px 8px rgba(0,100,0,0.5), 0 0 15px rgba(152, 255, 152, 0.5), inset 0 2px 3px rgba(255,255,255,0.5), inset 0 -2px 3px rgba(0,80,0,0.3);
             animation: centerGlow 2s ease-in-out infinite;
         }
 
         @keyframes centerGlow {
-            0%, 100% { 
-                box-shadow: 
-                    0 3px 8px rgba(0,100,0,0.5),
-                    0 0 15px rgba(152, 255, 152, 0.5),
-                    inset 0 2px 3px rgba(255,255,255,0.5),
-                    inset 0 -2px 3px rgba(0,80,0,0.3);
-            }
-            50% { 
-                box-shadow: 
-                    0 3px 10px rgba(0,100,0,0.6),
-                    0 0 25px rgba(152, 255, 152, 0.8),
-                    inset 0 2px 4px rgba(255,255,255,0.6),
-                    inset 0 -2px 3px rgba(0,80,0,0.3);
-            }
+            0%, 100% { box-shadow: 0 3px 8px rgba(0,100,0,0.5), 0 0 15px rgba(152, 255, 152, 0.5), inset 0 2px 3px rgba(255,255,255,0.5), inset 0 -2px 3px rgba(0,80,0,0.3); }
+            50% { box-shadow: 0 3px 10px rgba(0,100,0,0.6), 0 0 25px rgba(152, 255, 152, 0.8), inset 0 2px 4px rgba(255,255,255,0.6), inset 0 -2px 3px rgba(0,80,0,0.3); }
         }
 
-        /* Brillo superior del nudo */
         .bow-tie-center::before {
             content: '';
             position: absolute;
@@ -258,7 +198,6 @@
             border-radius: 3px 3px 50% 50%;
         }
 
-        /* Línea decorativa del nudo */
         .bow-tie-center::after {
             content: '';
             position: absolute;
@@ -271,7 +210,6 @@
             border-radius: 1px;
         }
 
-        /* CONTENIDO DE LA INVITACIÓN */
         .invitation-content {
             position: relative;
             z-index: 10;
@@ -336,7 +274,6 @@
             text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
         }
 
-        /* Adorno decorativo con curvas elegantes */
         .ornament-divider {
             width: 240px;
             height: 35px;
@@ -361,7 +298,6 @@
             margin-bottom: 8px;
         }
 
-        /* Cinta/Ribbon Super Elegante */
         .ribbon-container {
             display: flex;
             justify-content: center;
@@ -375,14 +311,7 @@
         }
 
         .ribbon {
-            background: linear-gradient(180deg, 
-                #f8f8f8 0%, 
-                #ffffff 15%,
-                #f5f5f5 30%,
-                #e8e8e8 50%,
-                #f0f0f0 70%,
-                #ffffff 85%,
-                #e5e5e5 100%);
+            background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 15%, #f5f5f5 30%, #e8e8e8 50%, #f0f0f0 70%, #ffffff 85%, #e5e5e5 100%);
             color: #1a1a1a;
             padding: 12px 50px;
             font-size: 15px;
@@ -392,44 +321,29 @@
             position: relative;
             z-index: 2;
             border: 1px solid rgba(152, 255, 152, 0.5);
-            box-shadow: 
-                0 6px 20px rgba(0,0,0,0.5),
-                0 0 15px rgba(152, 255, 152, 0.3),
-                inset 0 1px 0 rgba(255,255,255,1),
-                inset 0 -1px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5), 0 0 15px rgba(152, 255, 152, 0.3), inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(0,0,0,0.1);
         }
 
-        /* Puntas de la cinta */
-        .ribbon::before,
-        .ribbon::after {
+        .ribbon::before, .ribbon::after {
             content: '';
             position: absolute;
             top: 0;
             height: 100%;
             width: 25px;
-            background: linear-gradient(180deg, 
-                #f0f0f0 0%, 
-                #e8e8e8 50%,
-                #f0f0f0 100%);
+            background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 50%, #f0f0f0 100%);
         }
 
         .ribbon::before {
             left: -25px;
             clip-path: polygon(100% 0, 100% 100%, 0 50%);
-            border-top: 1px solid rgba(152, 255, 152, 0.5);
-            border-bottom: 1px solid rgba(152, 255, 152, 0.5);
         }
 
         .ribbon::after {
             right: -25px;
             clip-path: polygon(0 0, 100% 50%, 0 100%);
-            border-top: 1px solid rgba(152, 255, 152, 0.5);
-            border-bottom: 1px solid rgba(152, 255, 152, 0.5);
         }
 
-        /* Colas de la cinta detrás */
-        .ribbon-tail-left,
-        .ribbon-tail-right {
+        .ribbon-tail-left, .ribbon-tail-right {
             position: absolute;
             top: 8px;
             width: 35px;
@@ -450,7 +364,6 @@
             box-shadow: -2px 3px 8px rgba(0,0,0,0.5);
         }
 
-        /* Decoración de esquinas de la cinta */
         .ribbon-corner {
             position: absolute;
             width: 8px;
@@ -465,9 +378,7 @@
         .ribbon-corner.bottom-left { bottom: -4px; left: -4px; }
         .ribbon-corner.bottom-right { bottom: -4px; right: -4px; }
 
-        /* Línea decorativa superior e inferior */
-        .ribbon-line-top,
-        .ribbon-line-bottom {
+        .ribbon-line-top, .ribbon-line-bottom {
             position: absolute;
             left: 10px;
             right: 10px;
@@ -478,17 +389,13 @@
         .ribbon-line-top { top: 4px; }
         .ribbon-line-bottom { bottom: 4px; }
 
-        /* Brillo animado */
         .ribbon-shine {
             position: absolute;
             top: 0;
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255,255,255,0.4), 
-                transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             animation: ribbonShine 3s ease-in-out infinite;
             z-index: 3;
         }
@@ -499,7 +406,6 @@
             100% { left: 150%; }
         }
 
-        /* Iniciales con estrellas */
         .initials-row {
             display: flex;
             align-items: center;
@@ -508,10 +414,7 @@
             margin: 8px 0;
         }
 
-        .star {
-            color: #fff;
-            font-size: 14px;
-        }
+        .star { color: #fff; font-size: 14px; }
 
         .initials {
             font-family: 'Playfair Display', serif;
@@ -520,10 +423,7 @@
             color: #98FF98;
         }
 
-        /* Detalles del evento */
-        .event-details {
-            margin-top: 5px;
-        }
+        .event-details { margin-top: 5px; }
 
         .detail-row {
             font-size: 12px;
@@ -532,7 +432,6 @@
             line-height: 1.4;
         }
 
-        /* Countdown */
         .countdown-section {
             margin-top: 8px;
             padding: 8px;
@@ -551,7 +450,122 @@
             color: #98FF98;
         }
 
-        /* SOLAPA IZQUIERDA */
+        /* FOTO FLOTANTE GRANDE EN EL CENTRO */
+        .floating-photo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+        }
+
+        .floating-photo-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .floating-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid rgba(152, 255, 152, 0.8);
+            box-shadow: 
+                0 0 60px rgba(152, 255, 152, 0.5),
+                0 20px 60px rgba(0,0,0,0.8);
+            opacity: 0;
+            transform: scale(0.5) rotateY(90deg);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .floating-photo.show {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+        }
+
+        .floating-photo.hide {
+            opacity: 0;
+            transform: scale(0.5) rotateY(-90deg);
+        }
+
+        .floating-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-photo-number {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #98FF98;
+            text-shadow: 0 0 20px rgba(152, 255, 152, 0.8);
+        }
+
+        .floating-photo-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .floating-photo-text {
+            margin-top: 20px;
+            font-family: 'Pinyon Script', cursive;
+            font-size: 28px;
+            color: #98FF98;
+            text-shadow: 0 0 15px rgba(152, 255, 152, 0.6);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .floating-photo-text.show {
+            opacity: 1;
+        }
+
+        .floating-photo-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .floating-fb-hint {
+            margin-top: 15px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(152, 255, 152, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background: #98FF98;
+            box-shadow: 0 0 10px rgba(152, 255, 152, 0.8);
+            transform: scale(1.3);
+        }
+
+        .indicator:hover {
+            background: rgba(152, 255, 152, 0.5);
+        }
+
         .lapel-left {
             position: absolute;
             top: 0;
@@ -571,7 +585,6 @@
             transform: rotateY(-160deg);
         }
 
-        /* Solapa triangular izquierda */
         .lapel-left::before {
             content: '';
             position: absolute;
@@ -596,7 +609,6 @@
             border-color: transparent #3a3a3a transparent transparent;
         }
 
-        /* Botones del saco izquierdo */
         .jacket-buttons-left {
             position: absolute;
             right: 25px;
@@ -616,7 +628,6 @@
             box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
         }
 
-        /* SOLAPA DERECHA */
         .lapel-right {
             position: absolute;
             top: 0;
@@ -636,7 +647,6 @@
             transform: rotateY(160deg);
         }
 
-        /* Solapa triangular derecha */
         .lapel-right::before {
             content: '';
             position: absolute;
@@ -661,7 +671,6 @@
             border-color: #3a3a3a transparent transparent transparent;
         }
 
-        /* Botones del saco derecho */
         .jacket-buttons-right {
             position: absolute;
             left: 25px;
@@ -672,7 +681,6 @@
             z-index: 5;
         }
 
-        /* Pañuelo de bolsillo */
         .pocket-square {
             position: absolute;
             left: 30px;
@@ -717,7 +725,6 @@
             border-bottom: 24px solid #fff;
         }
 
-        /* Brillo sutil */
         .shine {
             position: absolute;
             top: 0;
@@ -728,7 +735,6 @@
             pointer-events: none;
         }
 
-        /* Botón de música */
         .music-btn {
             position: fixed;
             top: 20px;
@@ -750,7 +756,6 @@
             transform: scale(1.1);
         }
 
-        /* Animación de flotación */
         @keyframes cardFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
@@ -764,38 +769,35 @@
             animation: none;
         }
 
-        /* Responsive */
         @media (max-width: 420px) {
             .tuxedo-card {
                 width: 340px;
                 height: 580px;
             }
-            
             .name { font-size: 30px; }
             .number-18 { font-size: 60px; }
             .invitacion-text { font-size: 28px; }
+            .photo-slider, .photo-frame {
+                width: 70px;
+                height: 70px;
+            }
         }
     </style>
 </head>
 <body>
     <canvas id="bgCanvas"></canvas>
-
     <div class="tap-instruction" id="tapInstruction">Toca para abrir</div>
 
     <div class="tuxedo-card" id="tuxedoCard">
-        <!-- Camisa interior con contenido de la invitación -->
         <div class="shirt-inside">
-            <!-- Moño -->
             <div class="bow-tie">
                 <div class="bow-tie-wing left"></div>
                 <div class="bow-tie-center"></div>
                 <div class="bow-tie-wing right"></div>
             </div>
 
-            <!-- Contenido de la invitación -->
             <div class="invitation-content">
                 <div class="invitacion-text">Invitación</div>
-                
                 <div class="name">GABRIEL</div>
                 <div class="fiesta-text">fiesta de cumpleaños</div>
                 
@@ -807,42 +809,25 @@
                 
                 <div class="ornament-divider">
                     <svg viewBox="0 0 280 50" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Curvas izquierdas -->
                         <path d="M10,25 Q30,10 50,25 Q70,40 90,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
                         <path d="M10,25 Q30,40 50,25 Q70,10 90,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
-                        
-                        <!-- Espirales izquierdas -->
                         <path d="M5,25 Q0,15 10,10 Q20,5 25,15" stroke="#666" stroke-width="1" fill="none"/>
                         <path d="M5,25 Q0,35 10,40 Q20,45 25,35" stroke="#666" stroke-width="1" fill="none"/>
-                        
-                        <!-- Curva conectora izquierda al centro -->
                         <path d="M90,25 Q105,15 120,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
                         <path d="M90,25 Q105,35 120,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
-                        
-                        <!-- Flor central -->
                         <circle cx="140" cy="25" r="8" fill="#98FF98" opacity="0.9"/>
                         <circle cx="140" cy="25" r="5" fill="#0d0d0d"/>
                         <circle cx="140" cy="25" r="3" fill="#98FF98"/>
-                        
-                        <!-- Pétalos de la flor -->
                         <ellipse cx="140" cy="14" rx="3" ry="5" fill="#98FF98" opacity="0.7"/>
                         <ellipse cx="140" cy="36" rx="3" ry="5" fill="#98FF98" opacity="0.7"/>
                         <ellipse cx="129" cy="25" rx="5" ry="3" fill="#98FF98" opacity="0.7"/>
                         <ellipse cx="151" cy="25" rx="5" ry="3" fill="#98FF98" opacity="0.7"/>
-                        
-                        <!-- Curva conectora derecha del centro -->
                         <path d="M160,25 Q175,15 190,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
                         <path d="M160,25 Q175,35 190,25" stroke="#98FF98" stroke-width="1.5" fill="none"/>
-                        
-                        <!-- Curvas derechas -->
                         <path d="M190,25 Q210,10 230,25 Q250,40 270,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
                         <path d="M190,25 Q210,40 230,25 Q250,10 270,25" stroke="#98FF98" stroke-width="1.5" fill="none" opacity="0.9"/>
-                        
-                        <!-- Espirales derechas -->
                         <path d="M275,25 Q280,15 270,10 Q260,5 255,15" stroke="#666" stroke-width="1" fill="none"/>
                         <path d="M275,25 Q280,35 270,40 Q260,45 255,35" stroke="#666" stroke-width="1" fill="none"/>
-                        
-                        <!-- Puntos decorativos -->
                         <circle cx="50" cy="25" r="2" fill="#98FF98"/>
                         <circle cx="230" cy="25" r="2" fill="#98FF98"/>
                     </svg>
@@ -885,7 +870,6 @@
             </div>
         </div>
 
-        <!-- Solapa izquierda del saco -->
         <div class="lapel-left">
             <div class="shine"></div>
             <div class="jacket-buttons-left">
@@ -894,7 +878,6 @@
             </div>
         </div>
 
-        <!-- Solapa derecha del saco -->
         <div class="lapel-right">
             <div class="shine"></div>
             <div class="jacket-buttons-right">
@@ -912,31 +895,139 @@
 
     <button class="music-btn" id="musicBtn" aria-label="Reproducir música">🎵</button>
 
-    <audio id="bgMusic" loop>
+    <!-- OVERLAY DE FOTOS FLOTANTES -->
+    <div class="floating-photo-overlay" id="floatingOverlay">
+        <div class="floating-photo-container">
+            <a href="#" target="_blank" class="floating-photo-link" id="floatingLink">
+                <div class="floating-photo" id="floatingPhoto">
+                    <img src="" alt="Foto" id="floatingImg">
+                </div>
+            </a>
+            <div class="floating-photo-text" id="floatingText">Momentos especiales</div>
+            <div class="floating-fb-hint">Toca la foto para ver en Facebook</div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // ===== INTERACCIÓN DE LA TARJETA =====
         const card = document.getElementById('tuxedoCard');
         const tapInstruction = document.getElementById('tapInstruction');
+        const floatingOverlay = document.getElementById('floatingOverlay');
+        const floatingPhoto = document.getElementById('floatingPhoto');
+        const floatingImg = document.getElementById('floatingImg');
+        const floatingText = document.getElementById('floatingText');
+        const floatingLink = document.getElementById('floatingLink');
         let isOpen = false;
+        let isAnimating = false;
 
-        function toggleCard() {
-            isOpen = !isOpen;
+        // URLs de las fotos
+        const photoUrls = [
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/491922231_9010260529079973_3113134124215703943_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=DFYlNhK3aa8Q7kNvwFutZNX&_nc_oc=AdnjubghHJvxtol6MaslfselLOWQEW0xFJoBPHWuRwtoDP5nIxMZP8qYD_OBq1blTkrMpcRyMva40cYmO1VCRDCR&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=I3HGsncth5eZhr3RkxdVOA&oh=00_AfkqRhOM9QKGBsGXFbSMI3YkGNMDzNYtfcmIK355qcFD_Q&oe=695908EB',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t1.6435-9/80379022_2289687411137352_3537588158818418688_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=UT_EnACEYMAQ7kNvwGBIjho&_nc_oc=Adni3G-12fvijDTx1YdIwW2ZfhcoVjUOpyacoNAg7gZRTMbt041CIxUxn0jgOcUk2aD3yQE9hV89O2qNhDIO_n-G&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=Okp5xg8ERM1Of__8VoQMbA&oh=00_AfloLhymJ95ed8QDNylQ5It6-nwcdtIxOi-xNzbHc8DYVA&oe=697AE151',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/497397551_9226514487454575_7809609511202690281_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=fMAHUV1zgdUQ7kNvwHcBlbU&_nc_oc=AdlGuYAijuyjR3IPm95b8_XGPN_ll1gX6Vyuxg7e8dVjMfVXH37JiOlxW5OuNl2OaLh2xp8qKlcMo5XFa6YOAAot&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=0uow0wNgLWnmnPET3pD_8g&oh=00_AfmVyy9WdmiMvjV2gZmsvoHggCm2CtzoXg7wBZF8DAg1JQ&oe=69592749',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/510076769_9489922404447114_5207652229034304789_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=0nMHY8Ijr6AQ7kNvwGrVX9j&_nc_oc=AdllHSfvWms5WZ9Myp5indC05pPSA4aVMdBnDo-z54dN7z_Fupe7Kx4pVHcCPLyZ1BL41abzfiA-VgAxC640KZxu&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=csEl_eEv24oManpwXLw3PA&oh=00_AfnIH9gDn6PzO-l7lCYVHHFoz72qlbA4r5AOiZZED3povQ&oe=695928E6'
+        ];
+
+        // Enlaces de Facebook en orden
+        const photoLinks = [
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/491922231_9010260529079973_3113134124215703943_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=DFYlNhK3aa8Q7kNvwFutZNX&_nc_oc=AdnjubghHJvxtol6MaslfselLOWQEW0xFJoBPHWuRwtoDP5nIxMZP8qYD_OBq1blTkrMpcRyMva40cYmO1VCRDCR&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=I3HGsncth5eZhr3RkxdVOA&oh=00_AfkqRhOM9QKGBsGXFbSMI3YkGNMDzNYtfcmIK355qcFD_Q&oe=695908EB',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t1.6435-9/80379022_2289687411137352_3537588158818418688_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=UT_EnACEYMAQ7kNvwGBIjho&_nc_oc=Adni3G-12fvijDTx1YdIwW2ZfhcoVjUOpyacoNAg7gZRTMbt041CIxUxn0jgOcUk2aD3yQE9hV89O2qNhDIO_n-G&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=Okp5xg8ERM1Of__8VoQMbA&oh=00_AfloLhymJ95ed8QDNylQ5It6-nwcdtIxOi-xNzbHc8DYVA&oe=697AE151',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/497397551_9226514487454575_7809609511202690281_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=fMAHUV1zgdUQ7kNvwHcBlbU&_nc_oc=AdlGuYAijuyjR3IPm95b8_XGPN_ll1gX6Vyuxg7e8dVjMfVXH37JiOlxW5OuNl2OaLh2xp8qKlcMo5XFa6YOAAot&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=0uow0wNgLWnmnPET3pD_8g&oh=00_AfmVyy9WdmiMvjV2gZmsvoHggCm2CtzoXg7wBZF8DAg1JQ&oe=69592749',
+            'https://scontent.fcuz1-1.fna.fbcdn.net/v/t39.30808-6/510076769_9489922404447114_5207652229034304789_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=0nMHY8Ijr6AQ7kNvwGrVX9j&_nc_oc=AdllHSfvWms5WZ9Myp5indC05pPSA4aVMdBnDo-z54dN7z_Fupe7Kx4pVHcCPLyZ1BL41abzfiA-VgAxC640KZxu&_nc_zt=23&_nc_ht=scontent.fcuz1-1.fna&_nc_gid=csEl_eEv24oManpwXLw3PA&oh=00_AfnIH9gDn6PzO-l7lCYVHHFoz72qlbA4r5AOiZZED3povQ&oe=695928E6'
+        ];
+
+        const photoTexts = [
+            'Momentos especiales',
+            'Recuerdos inolvidables', 
+            'Creciendo juntos',
+            '¡Mis 18 años!'
+        ];
+
+        function showFloatingPhotos() {
+            return new Promise((resolve) => {
+                let currentIndex = 0;
+                floatingOverlay.classList.add('active');
+                
+                function showNextPhoto() {
+                    if (currentIndex >= photoUrls.length) {
+                        // Terminar animación
+                        floatingText.classList.remove('show');
+                        floatingPhoto.classList.remove('show');
+                        floatingPhoto.classList.add('hide');
+                        
+                        setTimeout(() => {
+                            floatingOverlay.classList.remove('active');
+                            floatingPhoto.classList.remove('hide');
+                            resolve();
+                        }, 500);
+                        return;
+                    }
+
+                    // Ocultar foto actual
+                    floatingPhoto.classList.remove('show');
+                    floatingPhoto.classList.add('hide');
+                    floatingText.classList.remove('show');
+
+                    setTimeout(() => {
+                        // Cambiar imagen y enlace
+                        floatingImg.src = photoUrls[currentIndex];
+                        floatingLink.href = photoLinks[currentIndex];
+                        floatingText.textContent = photoTexts[currentIndex];
+                        
+                        // Mostrar nueva foto
+                        floatingPhoto.classList.remove('hide');
+                        floatingPhoto.classList.add('show');
+                        floatingText.classList.add('show');
+
+                        currentIndex++;
+
+                        // Siguiente foto después de 1.5 segundos
+                        setTimeout(showNextPhoto, 1500);
+                    }, 400);
+                }
+
+                // Iniciar con la primera foto
+                floatingImg.src = photoUrls[0];
+                floatingLink.href = photoLinks[0];
+                floatingText.textContent = photoTexts[0];
+                floatingPhoto.classList.add('show');
+                floatingText.classList.add('show');
+                currentIndex = 1;
+
+                setTimeout(showNextPhoto, 1500);
+            });
+        }
+
+        async function toggleCard() {
+            if (isAnimating) return;
+
             if (isOpen) {
+                // Está abierto, mostrar fotos antes de cerrar
+                isAnimating = true;
+                tapInstruction.textContent = '';
+                
+                await showFloatingPhotos();
+                
+                // Ahora cerrar la tarjeta
+                card.classList.remove('opened');
+                tapInstruction.textContent = 'Toca para abrir';
+                isOpen = false;
+                isAnimating = false;
+            } else {
+                // Está cerrado, abrir
+                isOpen = true;
                 card.classList.add('opened');
                 tapInstruction.textContent = 'Toca para cerrar';
                 createConfetti(window.innerWidth / 2, window.innerHeight / 2, 60);
-            } else {
-                card.classList.remove('opened');
-                tapInstruction.textContent = 'Toca para abrir';
             }
         }
 
         card.addEventListener('click', toggleCard);
 
-        // ===== CANVAS BACKGROUND =====
+        // CANVAS BACKGROUND
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -951,12 +1042,8 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Partículas flotantes
         class Particle {
-            constructor() {
-                this.reset();
-            }
-
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
@@ -966,14 +1053,12 @@
                 this.opacity = Math.random() * 0.5 + 0.2;
                 this.color = Math.random() > 0.5 ? '#98FF98' : '#00CED1';
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
                 if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -984,7 +1069,6 @@
             }
         }
 
-        // Estrellas
         class Star {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -993,12 +1077,10 @@
                 this.twinkleSpeed = Math.random() * 0.02 + 0.01;
                 this.opacity = Math.random();
             }
-
             update() {
                 this.opacity += this.twinkleSpeed;
                 if (this.opacity > 1 || this.opacity < 0) this.twinkleSpeed *= -1;
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -1009,7 +1091,6 @@
             }
         }
 
-        // Confetti
         class Confetti {
             constructor(x, y) {
                 this.x = x;
@@ -1023,7 +1104,6 @@
                 this.opacity = 1;
                 this.color = ['#98FF98', '#00CED1', '#FFD700', '#FF6B6B', '#fff'][Math.floor(Math.random() * 5)];
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
@@ -1031,7 +1111,6 @@
                 this.rotation += this.rotationSpeed;
                 this.opacity -= 0.015;
             }
-
             draw() {
                 if (this.opacity <= 0) return;
                 ctx.save();
@@ -1043,7 +1122,6 @@
                 ctx.restore();
                 ctx.globalAlpha = 1;
             }
-
             isDead() { return this.opacity <= 0; }
         }
 
@@ -1053,26 +1131,21 @@
             }
         }
 
-        // Inicializar
         for (let i = 0; i < 40; i++) particles.push(new Particle());
         for (let i = 0; i < 60; i++) stars.push(new Star());
 
-        // Animación
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
             stars.forEach(star => { star.update(); star.draw(); });
             particles.forEach(particle => { particle.update(); particle.draw(); });
-
             confettiParticles = confettiParticles.filter(c => !c.isDead());
             confettiParticles.forEach(c => { c.update(); c.draw(); });
-
             requestAnimationFrame(animate);
         }
 
         animate();
 
-        // ===== COUNTDOWN =====
+        // COUNTDOWN
         const eventDate = new Date('2026-01-03T18:00:00').getTime();
 
         function updateCountdown() {
@@ -1089,14 +1162,13 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('timeLeft').textContent = 
-                `${days} días, ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('timeLeft').textContent = days + ' días, ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
         }
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // ===== MÚSICA =====
+        // MÚSICA
         const music = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
         let playing = false;
